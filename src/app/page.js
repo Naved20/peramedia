@@ -259,16 +259,42 @@ function BigCta() {
 }
 
 function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-  function handleSubmit(event) {
+  const [submissionStatus, setSubmissionStatus] = useState("idle");
+  const [submissionError, setSubmissionError] = useState("");
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const subject = encodeURIComponent(`Project inquiry from ${form.get("name")}`);
-    const body = encodeURIComponent([...form.entries()].map(([key, value]) => `${key}: ${value}`).join("\n"));
-    setSubmitted(true);
-    window.location.href = `mailto:hello@peramedia.com?subject=${subject}&body=${body}`;
+    const form = event.currentTarget;
+    setSubmissionStatus("sending");
+    setSubmissionError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+      });
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.error || "We couldn't send your inquiry. Please try again.");
+      }
+
+      form.reset();
+      setSubmissionStatus("success");
+    } catch (error) {
+      console.error("Inquiry submission failed:", error);
+      setSubmissionError(error instanceof Error ? error.message : "We couldn't send your inquiry. Please try again.");
+      setSubmissionStatus("error");
+    }
   }
-  return <section className="contact section-wrap" id="contact"><div className="contact-heading"><Reveal><p className="eyebrow section-label">08 / LET&apos;S TALK</p></Reveal><Reveal><h2>Start with<br /><span>the problem.</span></h2></Reveal><Reveal><p>Tell us a little about what you are trying to solve. We will take it from there.</p></Reveal><div className="contact-aside"><span>NO PITCH DECK REQUIRED.</span><span>JUST A GOOD CONVERSATION <b>↘</b></span></div></div><div className="form-wrap"><form className="contact-form" onSubmit={handleSubmit}><div className="form-row"><label>Name<input name="name" autoComplete="name" placeholder="Your name" required /></label><label>Email<input type="email" name="email" autoComplete="email" placeholder="you@company.com" required /></label></div><div className="form-row"><label>Company<input name="company" autoComplete="organization" placeholder="Company name" /></label><label>Website<input type="url" name="website" placeholder="https://" /></label></div><div className="form-row"><label>Project type<select name="project type" defaultValue=""><option value="" disabled>Select a project type</option><option>Web application</option><option>Business automation</option><option>Dashboard</option><option>Customer portal</option><option>E-commerce</option><option>AI solution</option><option>Other</option></select></label><label>Budget<select name="budget" defaultValue=""><option value="" disabled>Select a range</option><option>$1k–$3k</option><option>$3k–$5k</option><option>$5k–$10k</option><option>$10k+</option><option>Not sure yet</option></select></label></div><label>What do you need help with?<textarea name="message" rows="3" placeholder="A few details about the problem, the people it affects, or what you have in mind..." required /></label><div className="form-submit"><p aria-live="polite">{submitted ? "Your email app should open with your inquiry." : "We usually reply within two business days."}</p><button className="button button-dark" type="submit">Send project inquiry <Arrow diagonal /></button></div></form></div></section>;
+  return <section className="contact section-wrap" id="contact"><div className="contact-heading"><Reveal><p className="eyebrow section-label">08 / LET&apos;S TALK</p></Reveal><Reveal><h2>Start with<br /><span>the problem.</span></h2></Reveal><Reveal><p>Tell us a little about what you are trying to solve. We will take it from there.</p></Reveal><div className="contact-aside"><span>NO PITCH DECK REQUIRED.</span><span>JUST A GOOD CONVERSATION <b>↘</b></span></div></div><div className="form-wrap"><form className="contact-form" onSubmit={handleSubmit} aria-busy={submissionStatus === "sending"}>
+    <label className="contact-honeypot" aria-hidden="true">Leave this field empty<input name="faxNumber" tabIndex={-1} autoComplete="off" /></label>
+    <div className="form-row"><label>Name<input name="name" autoComplete="name" maxLength={100} placeholder="Your name" required /></label><label>Email<input type="email" name="email" autoComplete="email" maxLength={254} placeholder="you@company.com" required /></label></div>
+    <div className="form-row"><label>Company<input name="company" autoComplete="organization" maxLength={160} placeholder="Company name" /></label><label>Website<input type="url" name="website" maxLength={2048} placeholder="https://" /></label></div>
+    <div className="form-row"><label>Project type<select name="projectType" defaultValue=""><option value="" disabled>Select a project type</option><option>Web application</option><option>Business automation</option><option>Dashboard</option><option>Customer portal</option><option>E-commerce</option><option>AI solution</option><option>Other</option></select></label><label>Budget<select name="budget" defaultValue=""><option value="" disabled>Select a range</option><option>$1k–$3k</option><option>$3k–$5k</option><option>$5k–$10k</option><option>$10k+</option><option>Not sure yet</option></select></label></div>
+    <label>What do you need help with?<textarea name="message" rows="3" maxLength={5000} placeholder="A few details about the problem, the people it affects, or what you have in mind..." required /></label>
+    <div className="form-submit"><p className={`form-status form-status-${submissionStatus}`} role="status" aria-live="polite">{submissionStatus === "success" ? "Inquiry sent. A confirmation email is on its way." : submissionStatus === "error" ? submissionError : submissionStatus === "sending" ? "Sending your inquiry..." : "We usually reply within two business days."}</p><button className="button button-dark" type="submit" disabled={submissionStatus === "sending"}>{submissionStatus === "sending" ? "Sending..." : "Send project inquiry"} <Arrow diagonal /></button></div>
+  </form></div></section>;
 }
 
 function Footer() {

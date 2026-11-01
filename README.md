@@ -35,3 +35,18 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 # peramedia
+
+## Inquiry email setup
+
+The contact form sends each inquiry to `naved2010m@gmail.com` and sends a
+confirmation with a copy of the inquiry to the submitter. Both messages are
+sent through `peramedia0@gmail.com` using Gmail SMTP.
+
+1. Enable 2-Step Verification for `peramedia0@gmail.com`, then create a Google
+   App Password for this site.
+2. Copy `.env.example` to `.env.local` and set `GMAIL_APP_PASSWORD` to that
+   App Password. Do not commit the real password.
+3. Add `GMAIL_USER` and `GMAIL_APP_PASSWORD` as server-side environment
+   variables in the production hosting dashboard, then redeploy.
+
+The form displays a setup error until these variables are configured.
