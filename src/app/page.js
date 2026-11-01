@@ -133,6 +133,35 @@ const projects = [
     liveDemo: "https://pixel-perfect-replica-opal-nu.vercel.app/",
     sourceUnavailable: true,
   },
+  {
+    number: "05",
+    name: "Thanks Giving",
+    title: "Thanks Giving – Role-Based Zakat & Direct Giving Platform",
+    category: "SOCIAL IMPACT / ZAKAT / DIRECT GIVING",
+    description: "A role-based giving platform connecting donors with verified recipients through private profiles, direct donation commitments, and offline payment confirmations.",
+    details: [
+      "Thanks Giving connects givers with recipients whose profiles and support requests can be reviewed by verifiers. Recipient identity and sensitive information stay private while public directory views provide a privacy-aware way to discover cases.",
+      "Givers can commit Zakat, Sadaqah, or Lillah through offline payment methods, with confirmation workflows for both giver and recipient. Administrators can manage users, cases, and activity while protected documents are delivered through authorized, signed Cloudinary requests.",
+    ],
+    features: [
+      "Separate Giver, Taker, Verifier, and Admin experiences",
+      "Recipient profiles and requests with verification states",
+      "Privacy-aware public recipient directory",
+      "Direct Zakat, Sadaqah, and Lillah commitments",
+      "Offline payment and giver/recipient confirmation workflows",
+      "Protected document upload and authorized viewing",
+      "Role-specific dashboards and administration tools",
+      "English, Hindi, Urdu, and Arabic with RTL support",
+      "Responsive layouts for mobile, tablet, and desktop",
+    ],
+    technologies: ["Next.js 16", "React 19", "Tailwind CSS 4", "Supabase Auth", "PostgreSQL", "Row-Level Security", "Cloudinary"],
+    tags: ["Social Impact", "FinTech", "Role-Based Access", "Full Stack"],
+    type: "thanks-giving",
+    previewTitle: "Thanks Giving",
+    previewLabel: "GIVING, WITH TRUST",
+    liveDemo: "https://thanks-giving.vercel.app/",
+    source: "https://github.com/Naved20/Thanks-Giving",
+  },
 ];
 const projectCount = String(projects.length).padStart(2, "0");
 const steps = [
