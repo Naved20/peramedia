@@ -40,9 +40,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 The contact form sends each inquiry to `naved2010m@gmail.com` and sends a
 confirmation with a copy of the inquiry to the submitter. Both messages are
-sent through `peramedia0@gmail.com` using Gmail SMTP.
+sent through `peramidea0@gmail.com` using Gmail SMTP.
 
-1. Enable 2-Step Verification for `peramedia0@gmail.com`, then create a Google
+1. Enable 2-Step Verification for `peramidea0@gmail.com`, then create a Google
    App Password for this site.
 2. Copy `.env.example` to `.env.local` and set `GMAIL_APP_PASSWORD` to that
    App Password. Do not commit the real password.

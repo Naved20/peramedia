@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 
 export const runtime = "nodejs";
 
-const senderEmail = "peramedia0@gmail.com";
+const senderEmail = "peramidea0@gmail.com";
 const inquiryRecipient = "naved2010m@gmail.com";
 const projectTypes = new Set([
   "Web application",
@@ -75,7 +75,7 @@ export async function POST(request) {
   if (gmailUser !== senderEmail || !gmailAppPassword) {
     console.error("Inquiry email is not configured. Set GMAIL_USER and GMAIL_APP_PASSWORD.");
     return Response.json(
-      { error: "The inquiry form is temporarily unavailable. Please email peramedia0@gmail.com." },
+      { error: "The inquiry form is temporarily unavailable. Please email peramidea0@gmail.com." },
       { status: 503 },
     );
   }
@@ -139,7 +139,7 @@ export async function POST(request) {
       failures.map(({ reason }) => reason instanceof Error ? reason.message : String(reason)),
     );
     return Response.json(
-      { error: "We couldn't confirm delivery. Please try again or email peramedia0@gmail.com." },
+      { error: "We couldn't confirm delivery. Please try again or email peramidea0@gmail.com." },
       { status: 502 },
     );
   }
