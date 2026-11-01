@@ -12,11 +12,129 @@ const services = [
   ["07", "AI-powered tools", "Put useful intelligence inside the processes your business relies on."],
 ];
 const projects = [
-  { number: "01", name: "ServiceFlow", category: "FIELD OPERATIONS", description: "A clearer day for every crew, from the first booking to the final invoice.", type: "serviceflow", tags: "Operations platform · Automation" },
-  { number: "02", name: "ClinicOS", category: "HEALTHCARE", description: "A calmer way to coordinate appointments, patient details, and follow-up.", type: "clinicos", tags: "Customer portal · Scheduling" },
-  { number: "03", name: "StockPilot", category: "RETAIL", description: "Live inventory and sales signals to help independent teams stay a step ahead.", type: "stockpilot", tags: "Dashboard · E-commerce" },
-  { number: "04", name: "FieldDesk", category: "PROFESSIONAL SERVICES", description: "One connected workspace for jobs, people, and the details in between.", type: "fielddesk", tags: "Web application · CRM" },
+  {
+    number: "01",
+    name: "FieldDesk",
+    title: "FieldDesk – Enterprise HRMS & Operations Platform",
+    category: "ENTERPRISE SAAS / HRMS / AI / OPERATIONS",
+    description: "An AI-powered enterprise HRMS bringing employee management, facial biometric attendance, payroll, leave workflows, task management, and institutional reporting into one workspace.",
+    details: [
+      "FieldDesk is a comprehensive HRMS and operations platform for World Education Services (WES) and educational institutions. It connects AI-powered facial attendance with automated shift and leave management, payroll, collaborative task workflows, academic reporting, and performance management.",
+      "FaceHub combines TensorFlow.js and Face API for biometric attendance, with liveness detection, GPS geo-fencing, and kiosk authentication. Multi-institution access controls, real-time notifications, document management, and administrative workflows support day-to-day operations.",
+    ],
+    features: [
+      "FaceHub facial recognition attendance and biometric enrollment",
+      "Liveness detection, GPS geo-fencing, and kiosk OTP security",
+      "Automated attendance, shift, and holiday management",
+      "Leave workflows with automated balance policies",
+      "Payroll processing and PDF payslip generation",
+      "Kanban task boards, assignment groups, and peer reviews",
+      "Teacher academic and operations reporting",
+      "Performance appraisals and evaluations",
+      "Centralized company document repository",
+      "Multi-institution management and role-based access control",
+      "Real-time push notifications",
+      "Progressive Web App with offline support",
+    ],
+    technologies: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "PostgreSQL", "TensorFlow.js", "Face API", "Firebase Cloud Messaging", "Deno Edge Functions", "React Router", "TanStack Query", "Docker", "Workbox"],
+    tags: ["Enterprise SaaS", "HRMS", "AI", "Computer Vision", "Operations Management", "Full Stack"],
+    type: "fielddesk",
+    previewTitle: "FieldDesk",
+    previewLabel: "ONE WORKSPACE. EVERY OPERATION.",
+    liveDemo: "https://wes-onedesk.vercel.app/",
+    source: "https://github.com/Naved20/wes-onedesk",
+    flagship: true,
+  },
+  {
+    number: "02",
+    name: "Presence",
+    title: "Presence – Face Attendance Platform",
+    category: "AI / COMPUTER VISION / SAAS",
+    description: "An enterprise-grade, multi-tenant face recognition attendance platform for contactless employee check-ins and intelligent attendance analytics.",
+    details: [
+      "Presence automates employee attendance through webcam-based kiosk terminals, guided multi-angle face enrollment, and biometric identity matching.",
+      "RetinaFace detects faces and ArcFace extracts 512-dimensional embeddings. The platform also brings together tenant-isolated data, secure authentication, employee management, and attendance monitoring.",
+    ],
+    features: [
+      "Real-time face recognition attendance",
+      "Contactless webcam-based kiosk check-ins",
+      "Three-angle facial enrollment",
+      "512-dimensional biometric embeddings",
+      "Employee attendance management",
+      "Present, Absent, and Late tracking",
+      "Multi-tenant architecture",
+      "Real-time analytics and audit logs",
+      "JWT authentication and device API key verification",
+    ],
+    technologies: ["React 19", "TanStack Start", "TypeScript", "Tailwind CSS", "Python", "Flask 3", "PostgreSQL", "Neon", "RetinaFace", "ArcFace", "Recharts"],
+    tags: ["AI", "Computer Vision", "SaaS", "Full Stack"],
+    type: "presence",
+    previewTitle: "Presence",
+    previewLabel: "ATTENDANCE, WITHOUT THE WAIT",
+    liveDemo: "https://face-flow-hub-95.vercel.app/",
+    source: "https://github.com/hackerpsyco/face-flow-hub-95",
+  },
+  {
+    number: "03",
+    name: "Enterprise RAG Knowledge Assistant",
+    category: "AI / RAG / ENTERPRISE SAAS",
+    description: "An AI-powered knowledge assistant for document uploads, semantic search, and contextual answers with source citations.",
+    details: [
+      "This Retrieval-Augmented Generation system turns organizational documents into a searchable knowledge base. Documents are parsed, chunked, embedded, and stored in PostgreSQL with pgvector.",
+      "For each question, semantic retrieval, query rewriting, and cross-encoder reranking identify relevant context. LangGraph orchestrates the pipeline, and Groq-powered inference generates cited responses. Role-Based Access Control protects document access.",
+    ],
+    features: [
+      "PDF, PPTX, TXT, and Markdown document uploads",
+      "Automated document parsing and ingestion",
+      "Text chunking and vector embeddings",
+      "Semantic search using pgvector",
+      "Two-stage retrieval and reranking",
+      "LangGraph-based RAG orchestration",
+      "Contextual AI conversations with clickable citations",
+      "Confidence scoring and hallucination guardrails",
+      "Role-Based Access Control (RBAC)",
+      "Real-time response streaming using SSE",
+      "Secure document access isolation",
+    ],
+    technologies: ["Next.js 14", "FastAPI", "Python", "PostgreSQL", "pgvector", "SQLAlchemy", "LangGraph", "BAAI/bge-small-en-v1.5", "BAAI/bge-reranker-base", "Groq", "Docker", "AWS"],
+    tags: ["AI", "RAG", "Generative AI", "Enterprise SaaS", "NLP"],
+    type: "rag",
+    previewTitle: "Knowledge, connected.",
+    previewLabel: "ASK YOUR DOCUMENTS",
+    liveDemo: "http://98.93.71.36:3000/chat",
+    source: "https://github.com/Piyush105454/Rag-agent",
+  },
+  {
+    number: "04",
+    name: "NEURALIB",
+    title: "NEURALIB – Digital Book Library",
+    category: "WEB APPLICATION / DIGITAL LIBRARY / AI",
+    description: "A digital book library for organizing, discovering, and managing personal collections, with AI-powered book cover scanning.",
+    details: [
+      "NEURALIB makes personal book collection management simple with a centralized digital bookshelf, book discovery, and reading progress tracking.",
+      "Users can search by title, author, ISBN, or topic, organize their collection, and use NEURALIB Vision AI to identify books from their covers.",
+    ],
+    features: [
+      "Personal digital bookshelf",
+      "Search by title, author, ISBN, and topic",
+      "Book ownership management",
+      "Add books to a personal library",
+      "AI-powered book cover scanning",
+      "Reading status management",
+      "Reading categories and labels",
+      "Grid and list viewing options",
+      "Clean and intuitive library interface",
+    ],
+    technologies: [],
+    tags: ["Web Application", "Digital Library", "AI", "UI/UX"],
+    type: "neuralib",
+    previewTitle: "A library of your own.",
+    previewLabel: "YOUR BOOKS, IN ONE PLACE",
+    liveDemo: "https://pixel-perfect-replica-opal-nu.vercel.app/",
+    sourceUnavailable: true,
+  },
 ];
+const projectCount = String(projects.length).padStart(2, "0");
 const steps = [
   ["01", "Discover", "Understand your business, users, and the work getting in the way."],
   ["02", "Design", "Shape the right problem into a product experience people can move through."],
@@ -65,11 +183,58 @@ function Services() {
 }
 
 function ProjectArt({ project }) {
+  if (project.previewTitle) {
+    return <div className={`project-visual project-visual-branded project-${project.type}`} aria-label={`${project.name} branded project preview`}>
+      <div className="project-visual-top"><span><i /> PERAMEDIA / PROJECT PREVIEW</span><span>{project.number} — {projectCount}</span></div>
+      <div className={`project-preview project-preview-${project.type}`} aria-hidden="true">
+        <span className="project-preview-label">{project.previewLabel}</span>
+        <div className="project-preview-symbol"><i /><i /><i /></div>
+        <strong>{project.previewTitle}</strong>
+        <span className="project-preview-caption">A BRANDED PREVIEW · NOT A PRODUCT SCREENSHOT</span>
+      </div>
+      <div className="project-visual-index"><span>VISUAL PREVIEW</span><span>2026</span></div>
+    </div>;
+  }
   return <div className={`project-visual project-${project.type}`}><div className="project-visual-top"><span><i /> PERAMEDIA / FIELD NOTES</span><span>{project.number} — 04</span></div><InterfaceArt type={project.type} /><div className="project-visual-index"><span>PRODUCT SYSTEMS</span><span>2026</span></div></div>;
 }
 
+function FeaturedProject({ project, index }) {
+  return <article className={`project-card project-card-${index + 1} project-card-featured${project.flagship ? " project-card-flagship" : ""}`} key={project.name}>
+    <ProjectArt project={project} />
+    <div className="project-info">
+      <div>
+        <p className="project-category">{project.number} <i>·</i> {project.category}</p>
+        <h3>{project.title || project.name}</h3>
+        <p className="project-description">{project.description}</p>
+        {project.flagship && <span className="project-flagship-label">PERAMEDIA FLAGSHIP PROJECT</span>}
+      </div>
+      <a className="project-open" href={project.liveDemo} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.name} live demo`}><Arrow diagonal /></a>
+      <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+    </div>
+    <div className="project-actions">
+      <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">Live demo <Arrow diagonal /></a>
+      {project.source
+        ? <a href={project.source} target="_blank" rel="noopener noreferrer">GitHub <Arrow diagonal /></a>
+        : <span className="project-source-unavailable">GitHub source unavailable</span>}
+    </div>
+    <details className="project-details">
+      <summary>Project details &amp; technologies</summary>
+      <div className="project-details-content">
+        {project.details.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        <h4>Key features</h4>
+        <ul>{project.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
+        {project.technologies.length > 0
+          ? <><h4>Technology stack</h4><div className="project-tech-tags">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div></>
+          : <p className="project-stack-note">Technology stack not listed because the supplied repository could not be verified.</p>}
+      </div>
+    </details>
+  </article>;
+}
+
 function Work() {
-  return <section className="work section-wrap" id="work"><div className="work-heading"><Reveal><p className="eyebrow section-label">03 / A FEW GOOD PROBLEMS</p></Reveal><Reveal><h2>Selected<br /><span>work.</span></h2></Reveal><Reveal><p>Thoughtful systems for ambitious teams doing the work.</p></Reveal><span className="work-index">STUDIO PROJECTS<br />2024 — 2026</span></div><div className="project-grid">{projects.map((project, index) => <article className={`project-card project-card-${index + 1}`} key={project.name}><a className="project-link" href="#contact" aria-label={`Discuss a project like ${project.name}`}><ProjectArt project={project} /><div className="project-info"><div><p className="project-category">{project.number} <i>·</i> {project.category}</p><h3>{project.name}</h3><p className="project-description">{project.description}</p></div><span className="project-open"><Arrow diagonal /></span><div className="project-tags">{project.tags.split(" · ").map((tag) => <span key={tag}>{tag}</span>)}</div></div></a></article>)}</div><div className="work-end"><span>GOOD WORK STARTS WITH THE RIGHT QUESTION.</span><a className="text-link" href="#contact">Have one for us? <Arrow /></a></div></section>;
+  return <section className="work section-wrap" id="work"><div className="work-heading"><Reveal><p className="eyebrow section-label">03 / A FEW GOOD PROBLEMS</p></Reveal><Reveal><h2>Selected<br /><span>work.</span></h2></Reveal><Reveal><p>Thoughtful systems for ambitious teams doing the work.</p></Reveal><span className="work-index">STUDIO PROJECTS<br />2024 — 2026</span></div><div className="project-grid">{projects.map((project, index) => project.liveDemo
+    ? <FeaturedProject project={project} index={index} key={project.name} />
+    : <article className={`project-card project-card-${index + 1}`} key={project.name}><a className="project-link" href="#contact" aria-label={`Discuss a project like ${project.name}`}><ProjectArt project={project} /><div className="project-info"><div><p className="project-category">{project.number} <i>·</i> {project.category}</p><h3>{project.name}</h3><p className="project-description">{project.description}</p></div><span className="project-open"><Arrow diagonal /></span><div className="project-tags">{project.tags.split(" · ").map((tag) => <span key={tag}>{tag}</span>)}</div></div></a></article>)}</div><div className="work-end"><span>GOOD WORK STARTS WITH THE RIGHT QUESTION.</span><a className="text-link" href="#contact">Have one for us? <Arrow /></a></div></section>;
 }
 
 function ProblemSolution() {
