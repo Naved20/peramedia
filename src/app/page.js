@@ -309,7 +309,7 @@ return <header className={`site-header${menuOpen ? " menu-open" : ""}${scrolled 
     </a>
     <a href="#contact" onClick={closeMenu}>Contact <Arrow diagonal />
     </a>
-    <p>SOFTWARE STUDIO · UNITED STATES</p>
+    <p>SOFTWARE STUDIO, Bengaluru</p>
   </nav>
 </header>
 ;
@@ -327,7 +327,7 @@ return <section className="hero" id="top">
     <div className="hero-copy">
       <Reveal>
         <p className="eyebrow">
-          <span className="status-dot" /> SOFTWARE STUDIO <b>·</b> WEB <b>·</b> AUTOMATION <b>·</b> AI</p>
+          <span className="status-dot" /> SOFTWARE STUDIO </p>
       </Reveal>
       <Reveal className="hero-title-reveal">
         <h1>We build software<br />that moves business<span className="hero-period">.</span>
