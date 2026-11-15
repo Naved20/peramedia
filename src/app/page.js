@@ -379,9 +379,7 @@ return <div className="marquee" aria-label="Custom software, web applications, a
 
 function Introduction() {
 return <section className="intro section-wrap">
-  <Reveal>
-    <p className="eyebrow section-label">01 / THE OPPORTUNITY</p>
-  </Reveal>
+ 
   <div className="intro-grid">
     <Reveal>
       <h2>Your business has a problem.<br />
@@ -410,9 +408,7 @@ const [active, setActive] = useState(0);
 const previewType = active === 3 ? "clinicos" : active === 4 ? "stockpilot" : active === 5 ? "fielddesk" : "serviceflow";
 return <section className="services section-wrap" id="services">
   <div className="section-heading">
-    <Reveal>
-      <p className="eyebrow section-label">02 / CAPABILITIES</p>
-    </Reveal>
+
     <Reveal>
       <h2>What we<br />
         <span>build.</span>
