@@ -15,11 +15,28 @@ export const metadata = {
   title: "Peramedia — Software that moves business forward",
   description:
     "Peramedia builds custom digital products for growing businesses: web applications, dashboards, customer portals, automation, and AI-powered tools.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png" },
+    ],
+  },
   openGraph: {
     title: "Peramedia — Software that moves business forward",
     description:
       "Custom digital products for businesses ready to move beyond spreadsheets, manual work, and off-the-shelf tools.",
     type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 512,
+        height: 512,
+        alt: "Peramedia Logo",
+      },
+    ],
   },
 };
 
