@@ -81,7 +81,7 @@ a:hover .arrow, button:hover .arrow { transform: translate(3px, -2px); }
 @keyframes marquee { to { transform: translateX(-50%); } }
 .intro { padding-top: 140px; padding-bottom: 124px; }
 .section-label { margin: 0; color: var(--muted); }
-.intro-grid { display: grid; grid-template-columns: 1.7fr .62fr; gap: 7%; align-items: end; margin-top: 62px; }
+.intro-grid { display: grid; grid-template-columns: 1.7fr .62fr; gap: 7%; align-items: end; margin-top: 22px; }
 .intro h2, .section-heading h2, .work-heading h2, .problem-heading h2, .process-heading h2, .why h2, .about h2, .contact h2 { margin: 0; font-size: 56px; line-height: 1.06; font-weight: 510; letter-spacing: -.055em; }
 .intro h2 span, .section-heading h2 span, .work-heading h2 span, .problem-heading h2 span, .process-heading h2 span, .why h2 span, .about h2 span, .contact h2 span { color: #838b7c; }
 .intro-aside { padding-bottom: 6px; }
