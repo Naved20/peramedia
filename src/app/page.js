@@ -358,7 +358,7 @@ return <section className="hero" id="top">
     </div>
     <div className="hero-index">
       <span>INDEPENDENT DIGITAL PRODUCT STUDIO</span>
-      <span>WORKING ACROSS THE UNITED STATES <i>↓</i>
+      <span>WORKING ACROSS THE INDIA <i>↓</i>
       </span>
     </div>
   </div>
