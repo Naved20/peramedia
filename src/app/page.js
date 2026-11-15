@@ -408,11 +408,13 @@ const [active, setActive] = useState(0);
 const previewType = active === 3 ? "clinicos" : active === 4 ? "stockpilot" : active === 5 ? "fielddesk" : "serviceflow";
 return <section className="services section-wrap" id="services">
   <div className="section-heading">
-
     <Reveal>
       <h2>What we<br />
         <span>build.</span>
       </h2>
+    </Reveal>
+    <Reveal>
+
     </Reveal>
     <Reveal>
       <p className="section-note">The right digital tools can change the way a business runs. Here are a few ways we can help.</p>
